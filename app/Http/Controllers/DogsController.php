@@ -23,16 +23,22 @@ class DogsController extends Controller
         ]);
 
         $attr['image'] = $request->file('image')->store('image');
+        try {
+            $dog = Auth::user()->dogs()->create($attr);
+        } catch (\Illuminate\Database\QueryException $e) {
+            return redirect('dogs.dogs')->with('message', 'This name is already taken');
 
-        $dog = Auth::user()->dogs()->create($attr);
-        $dogs = Dog::all();
-        return view('home-app', ['home-app' => $dogs])->with('message', "Dog's account successfully created");
+
+        }
+
+        return view('dogs.show', $dog)->with('message', "Dog's account successfully created");
     }
     public function show(Dog $dog){
         return view('dogs.show', ['dog' => $dog]);
     }
 
-    public function create(){
+    public function create(Dog $dog){
+        Gate::authorize('edit-dogs', $dog);
         return view('dogs.create');
     }
     public function edit(Dog $dog){

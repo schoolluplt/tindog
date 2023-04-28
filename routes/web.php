@@ -20,6 +20,7 @@ Route::get('/', function () {
 
 Route::resource('users', \App\Http\Controllers\UsersController::class)->middleware(['auth', 'verified']);
 Route::resource('dogs', \App\Http\Controllers\DogsController::class)->middleware(['auth', 'verified']);
+Route::get('/send-email-to-users', 'EmailController@sendEmailToUsers')->name('send.email.to.users');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

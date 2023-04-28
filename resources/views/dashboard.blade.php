@@ -17,7 +17,7 @@
 <body class="font-sans antialiased">
 <div class="min-h-screen bg-gray-900">
     @include('layouts.navigation')
-
+    @include('users.users')
 
     @if (session('message'))
         <div class="py-20">

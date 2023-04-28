@@ -5,25 +5,33 @@
 
     <!--  Countdown -->
         <div class="absolute bottom-0 right-0">
-            <div class="w-screen sm:max-w-screen mt-6  shadow-md overflow-hidden sm:rounded-lg  bg-gradient-to-r from-red-500 to-pink-500 opacity-95">
-                <h1 id="headline" class="flex justify-center pt-5 uppercase ">TINDOG</h1>
-                <div id="countdown">
-                    <ul class="flex items-center justify-between">
-                        <li class="w-1/4 p-6 flex flex-col justify-evenly items-center"><span class="font-semibold text-xl" id="days"></span>Jours</li>
-                        <li class="w-1/4 p-6 flex flex-col justify-evenly items-center"><span class="font-semibold text-xl" id="hours"></span>Heures</li>
-                        <li class="w-1/4 p-6 flex flex-col justify-evenly items-center"><span class="font-semibold text-xl" id="minutes"></span>Minutes</li>
-                        <li class="w-1/4 p-6 flex flex-col justify-evenly items-center"><span class="font-semibold text-xl" id="seconds"></span>Secondes</li>
+            <div class="w-screen sm:max-w-screen mt-6 shadow-md overflow-hidden sm:rounded-lg  bg-gradient-to-r from-red-500 to-pink-500 opacity-95 flex items-center justify-center">
+                <div id="countdown" class="w-2/4 text-white">
+                    <ul class="flex items-center justify-center">
+                        <li class="w-1/4 p-6 flex flex-col justify-evenly items-center text-xl uppercase "><span class="font-semibold text-xl" id="days"></span>Days</li>
+                        <li class="w-1/4 p-6 flex flex-col justify-evenly items-center text-xl uppercase "><span class="font-semibold text-xl" id="hours"></span>Hours</li>
+                        <li class="w-1/4 p-6 flex flex-col justify-evenly items-center text-xl uppercase "><span class="font-semibold text-xl" id="minutes"></span>Minutes</li>
+                        <li class="w-1/4 p-6 flex flex-col justify-evenly items-center text-xl uppercase "><span class="font-semibold text-xl" id="seconds"></span>Secondes</li>
                     </ul>
                 </div>
             </div>
         </div>
 
 
-
+    <div class="card absolute bottom-40 left-24 w-full sm:max-w-md mt-6 px-6 py-4 bg-gradient-to-r from-red-500 to-pink-500 shadow-md overflow-hidden sm:rounded-lg ">
+        <div class="card-body">
+            <h5 class="card-title text-xl uppercase pb-6">Tinder, pour vos chiens.</h5>
+            <p class="card-text">We are excited to announce the launch of "Tindogs", the dog dating app that brings canine companionship to the digital age. This app is designed to connect dog owners with compatible playmates for their furry friends, making it easier than ever to find suitable companions for your dog. With features such as an intuitive interface, a messaging system for arranging playdates, and a community of like-minded dog owners, "Tindog" is the perfect solution for those who want to socialize their dogs and create meaningful connections. Join the pack today and start swiping!</p>
+            <x-primary-link class="mt-6">Register</x-primary-link>
+        </div>
+    </div>
     <!--  App mockup -->
-    <div class="absolute w-48 bottom-60 right-40 opacity-100 bg-black w-3/4 ">
-        <video  src="{{URL::asset("/video/tindog-video.mov")}}" controls autoplay loop>
-        </video>
+    <div class="absolute w-48 bottom-40 right-40 card absolute bottom-40 sm:max-w-md overflow-hidden sm:rounded-lg ">
+        <div class="card-body">
+            <video  src="{{URL::asset("/video/tindog-video.mov")}}" controls autoplay loop>
+            </video>
+        </div>
+
     </div>
     <form method="POST" action="{{ route('register') }}" id="register" >
         @csrf

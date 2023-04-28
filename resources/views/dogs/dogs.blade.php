@@ -14,9 +14,6 @@
                     <div>
                         <h3 class="text-base font-semibold tracking-tight text-gray-900"><a href="{{route('dogs.show', $dog)}}"> {{$dog->name}}</a></h3>
                         <p class="text-gray-400 text-xs">{{$dog->description}}</p>
-                        <audio controls src="{{ Storage::url($dog->audio )}}"class=" mb-4 mt-4 bg-white overflow-hidden">
-                            <source src="{{Storage::url($dog->audio)}}" class="ml-2">
-                        </audio>
                         @can('edit-dogs', $dog)
                             <div class="flex items-center">
                                 <form action="{{route('dogs.destroy', $dog)}}" method="POST">

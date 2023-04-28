@@ -26,8 +26,6 @@
         <x-auth-session-status class="mb-4" :status="session('status')" />
 
         <div class="absolute bottom-20 w-full h-2/3 sm:max-w-md mt-6 px-6 py-4  shadow-md overflow-hidden ">
-            <p>
-                <x-primary-link :href="route('login')" ></x-primary-link>
 
 
         <form method="POST" action="{{ route('login') }}" class="bg-gradient-to-r from-red-500 to-pink-500 sm:rounded-lg px-6 py-4 opacity-75">
